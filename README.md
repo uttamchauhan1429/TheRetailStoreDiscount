@@ -14,7 +14,15 @@ This project is to calculate discounts for Retail Store bill applying given busi
 # Steps to check-out and run JUinit test cases
   1. Clone the repository by running this command git clone https://github.com/uttamchauhan1429/TheRetailStoreDiscount.git
   2. Now we have the code repository. This project can be imported into Eclipse and then Junit test cases can be run
+ 
+# Steps to generate Sonar Report
+  1. Run SonarQube Server
+  2. Update sonar-scanner in conf folder of sonar scanner with your project specific details like    ProjectKey,ProjectName,Version,Sources,Binaries etc
+  3. Run sonar scanner and generate report link.
   
+  ![alt text](https://github.com/uttamchauhan1429/TheRetailStoreDiscount/blob/master/report.PNG)
+  
+
 # My Assumptions
   1. User has only one user type.
   2. UserType is not going to change, so i used enum for that.
@@ -22,7 +30,4 @@ This project is to calculate discounts for Retail Store bill applying given busi
 # TO DO
   1. Validations
   2. Database Integration
-  3. Improve Coverage
- 
-
-
+  3. Improve Code Coverage
