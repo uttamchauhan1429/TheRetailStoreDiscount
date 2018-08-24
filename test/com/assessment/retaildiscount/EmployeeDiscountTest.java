@@ -1,4 +1,4 @@
-package com.assessment.retaildiscount.service;
+package com.assessment.retaildiscount;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,16 +13,16 @@ import com.assessment.retaildiscount.enums.UserType;
 import com.assessment.retaildiscount.models.Bill;
 import com.assessment.retaildiscount.models.Item;
 import com.assessment.retaildiscount.models.User;
-import com.assessment.retaildiscount.service.impl.AffiliateDiscountImpl;
+import com.assessment.retaildiscount.service.impl.EmployeeDiscountImpl;
 
-public class AffiliateDiscountTest {
+public class EmployeeDiscountTest {
 
 	@Test
-	public void testAffiliateDiscount() {
+	public void testEmployeeDiscount() {
 		User user = new User();
 		user.setUserId(Long.parseLong(UUID.randomUUID().toString()));
 		user.setUserName("Uttam");
-		user.setUserType(UserType.STORE_AFFILIATE);
+		user.setUserType(UserType.STORE_EMPLOYEE);
 
 		Bill bill=new Bill();
 		bill.setUser(user);
@@ -31,8 +31,8 @@ public class AffiliateDiscountTest {
 		itemsList.add(new Item("Grapes", ItemType.GROCERIES, 100));
 		bill.setItemList(itemsList);
 		
-		AffiliateDiscountImpl affiliateDiscountImpl=new AffiliateDiscountImpl();
-		affiliateDiscountImpl.calculate(bill);
+		EmployeeDiscountImpl employeeDiscountImpl=new EmployeeDiscountImpl();
+		employeeDiscountImpl.calculate(bill);
 		assertEquals(90.0 , bill.getNetPayable(), 0.0001);
 		
 	}
